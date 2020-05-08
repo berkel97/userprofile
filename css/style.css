@@ -1,0 +1,376 @@
+:root {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --color: #e40046;
+    font-size: 14px;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #00ffd126;
+    overflow-x: hidden;
+    padding-top: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0 100px;
+}
+
+.profile-header {
+    background-color: #00c8cc1f;
+    width: 100%;
+    display: flex;
+    height: 190px;
+    position: relative;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .2);
+}
+
+
+.profile-img {
+    float: left;
+    width: 340px;
+    height: 200px;
+}
+
+.profile-img img {
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    border: 4px solid #ffffff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    z-index: 5;
+    background: #ffffff;
+}
+
+.profile-nav-info {
+    float: left;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.profile-nav-info h3 {
+    font-variant: small-caps;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.profile-nav-info .address {
+    display: flex;
+    font-weight: bold;
+    color: #00ADFF;
+    position: absolute;
+    top: 90px;
+}
+
+.profile-nav-info .address p {
+    margin-right: 5px;
+}
+
+.profile-option {
+    height: 40px;
+    width: 40px;
+    background: var(--color);
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    outline: none;
+}
+
+.profile-option .notification i {
+    color: white;
+    font-size: 1.2rem;
+    transition: all .5s ease-in-out;
+}
+
+.profile-option:hover {
+    background: white;
+    border: 1px solid var(--color);
+}
+
+.profile-option:hover .notification i {
+    color: var(--color);
+}
+
+.profile-option .notification .alert-message {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ffffff;
+    color: var(--color);
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.main-bd {
+    width: 100%;
+    display: flex;
+    padding-right: 15px;
+}
+
+.profile-side {
+    width: 300px;
+    background: #00c8cc1f;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    padding: 90px 30px 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 10px;
+    z-index: 99;
+}
+
+.profile-side p {
+    margin-bottom: 7px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.profile-side p i {
+    color: var(--color);
+    margin-right: 10px;
+}
+
+.mobile-no i {
+    transform: rotateY(180deg);
+}
+
+.profile-btn {
+    display: flex;
+}
+
+button.chat-btn,
+button.create-btn {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    background: var(--color);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    margin: 5px 2px;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 10px;
+    transition: background .3s ease-in-out;
+    box-shadow: 0 3px 7px 0px rgba(0, 0, 0, .3);
+    color: #ffffff;
+}
+
+button.chat-btn:hover,
+button.create-btn:hover {
+    background: #e40046d1;
+}
+
+button.chat-btn i,
+button.create-btn i {
+    margin-right: 5px;
+}
+
+.user-rating {
+    display: flex;
+}
+
+.user-rating h3 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    margin-right: 5px;
+    letter-spacing: 1px;
+    color: darkblue;
+    margin-top: 0;
+}
+
+.user-rating .no-user {
+    font-size: .9rem;
+}
+
+.rate {
+    padding-top: 6px;
+}
+
+.rate i {
+    font-size: .9rem;
+    color: var(--color)
+}
+
+.nav {
+    width: 100%;
+    z-index: +1;
+    margin-top: -9px;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    height: 40px;
+    background: #00c8cc1f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+
+.nav ul li {
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    transition: all .3 ease-in-out;
+}
+
+.nav ul li.active,
+.nav ul li:hover {
+    box-shadow: 0px -3px 0px red inset;
+}
+
+.profile-body {
+    width: 100%;
+    z-index: -1;
+}
+
+.tab {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+#see-more-bio,
+#see-less-bio {
+    color: blue;
+    cursor: pointer;
+    text-transform: lowercase;
+}
+
+@media(max-width: 1100px) {
+    .profile-side {
+        width: 250px;
+        padding: 90px 15px 20px;
+    }
+
+    .profile-img img {
+        height: 200px;
+        width: 200px;
+        left: 50px;
+        top: 50px;
+    }
+}
+
+@media(max-width: 900px) {
+    body {
+        margin: 0 20px;
+    }
+
+    .profile-header {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .profile-img {
+        float: left;
+        width: 100%;
+        height: 200px;
+    }
+
+    .profile-img img {
+        position: relative;
+        left: 0;
+    }
+
+    .profile-nav-info {
+        text-align: center;
+    }
+
+    .profile-option {
+        right: 20px;
+        top: 75%;
+        transform: translateY(50%);
+    }
+
+    .profile-nav-info .address {
+        text-align: center;
+        position: relative;
+        top: -44px;
+        left: 310px;
+
+    }
+
+    .main-bd {
+        flex-direction: column;
+        padding-right: 0px;
+    }
+
+    .profile-side {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        margin: 5px 0;
+    }
+
+    .user-rating {
+        justify-content: center;
+    }
+
+    @media (max-width: 450px) {
+        body {
+            margin: 0;
+        }
+
+        .profile-nav-info .address {
+            position: relative;
+            left: 168px;
+            top: -40px;
+        }
+
+        .profile-header h3 {
+            font-size: 1.7rem;
+        }
+
+        .profile-header p {
+            font-size: .9rem;
+        }
+    }
+
+    @media (max-width: 375px) {
+        body {
+            margin: 0;
+        }
+        .profile-nav-info .address {
+            position: relative;
+            left: 140px;
+            top: -40px;
+        }
+    }
+     @media (max-width: 320px) {
+         body {
+             margin: 0;
+         }
+         .profile-nav-info .address {
+             position: relative;
+             left: 119px;
+             top: -40px;
+         }
+     }
+
+}
